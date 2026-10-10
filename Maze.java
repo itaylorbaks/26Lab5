@@ -9,34 +9,60 @@ public class Maze {
     private Square[][] grid;
     private Square startSquare;
 
-    // returns the number of rows in the maze
+    /**
+     * Returns the number of rows in the maze.
+     *
+     * @return the number of rows in the maze
+     */
     public int getHeight() {
         return numRows;
     }
 
-    // returns the number of columns in the maze
+    /**
+     * Returns the number of columns in the maze.
+     *
+     * @return the number of columns in the maze
+     */
     public int getWidth() {
         return numCols;
     }
 
-    // returns the start square
+    /**
+     * Returns the start square of the maze.
+     *
+     * @return the start square
+     */
     public Square getStart() {
         return startSquare;
     }
 
-    // returns the square at the given coordinates
+    /**
+     * Returns the square at a given coordinate.
+     *
+     * @param row the row index of the square
+     * @param col the column index of the square
+     * @return the square at the given coordinates
+     */
     public Square getSquare(int row, int col) {
         return grid[row][col];
     }
 
-    /* resets the maze by resetting all of its squares */
+    /**
+     * Resets the maze by resetting every square in the grid.
+     */
     public void reset() {
         for (int r = 0; r < numRows; r++)
             for (int c = 0; c < numCols; c++)
                 grid[r][c].reset();
     }
 
-    // loads the maze from a file. This is static and returns a new maze object.
+    /**
+     * Loads a maze from a specified file.
+     *
+     * @param fname the path to the maze file
+     * @return a new Maze object loaded from the file, or null if that loading fails
+     * @throws FileNotFoundException if the maze file cant be found
+     */
     public static Maze loadMaze(String fname) throws FileNotFoundException {
         try {
 
@@ -69,7 +95,12 @@ public class Maze {
         }
     }
 
-    // returns an array list of all the neighbors of a square
+    /**
+     * Returns a list of neighboring squares for any given given square.
+     *
+     * @param sq the square whose neighbors are being retrieved
+     * @return a list of neighboring squares, or null if the square itself is null
+     */
     public ArrayList<Square> getNeighbors(Square sq) {
         if (sq != null) {
             int row = sq.getRow();
@@ -88,7 +119,12 @@ public class Maze {
             return null;
     }
 
-    /* draws the maze on the GUI. DO NOT CHANGE! */
+    /**
+     * Draws the maze on the GUI using the specified graphics context and dimensions.
+     *
+     * @param g the graphics context used to draw the maze
+     * @param d the dimensions of the drawing area
+     */
     public void draw(Graphics g, Dimension d) {
         int sqsize = Math.min(Math.min(d.width / numCols, d.height / numRows), MAXSQSIZE);
         int top = (d.height - sqsize * numRows) / 2;
