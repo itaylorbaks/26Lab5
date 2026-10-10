@@ -10,7 +10,7 @@ public class ReadTheDocs {
             al.add(i);
         }
 
-        Iterator<Integer> iter = al.iterator();
+        Iterator<Integer> iter = al.listIterator(80);
 
         while (iter.hasNext()) {
             Integer i = iter.next();
