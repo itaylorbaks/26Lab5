@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 
 
+/**
+ * A simple stack class implementing StackADT.
+ *
+ * @param <T> the type of elements stored in the queue
+ */
 public class MyStack<T> implements StackADT<T>{
     ArrayList<T> stack = null;
 
