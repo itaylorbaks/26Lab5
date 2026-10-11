@@ -3,20 +3,20 @@ import java.util.ArrayList;
 
 
 public class MyStack<T> extends StackADT<T>{
-    ArrayList<T> list = null;
+    ArrayList<T> stack = null;
 
     public MyStack(ArrayList<T> list){
-        this.list = list;
+        this.stack = stack;
     }
     
     public void push(T item){
-        list.add(list.size(), item);
+        stack.add(stack.size(), item);
     }
 
     public T pop(){
-        if (list.get(list.size()-1 ) != null){
-            T saved = list.get(list.size() - 1);
-            list.remove(list.get(list.size() - 1));
+        if (stack.get(stack.size()-1 ) != null){
+            T saved = stack.get(stack.size() - 1);
+            stack.remove(stack.get(stack.size() - 1));
             return saved;
         }
         else {
@@ -24,8 +24,8 @@ public class MyStack<T> extends StackADT<T>{
         }
     }
     public T peek(){
-        if (list.get(list.size()-1 ) != null){
-            T saved = list.get(list.size() - 1);
+        if (stack.get(stack.size()-1 ) != null){
+            T saved = stack.get(stack.size() - 1);
             return saved;
         }
         else {
@@ -34,6 +34,10 @@ public class MyStack<T> extends StackADT<T>{
 
     }
     public boolean isEmpty() {
-        return ()
+        return (stack.size() == 0);
+    }
+
+    public int size(){
+        return stack.size();
     }
 }
