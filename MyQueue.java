@@ -1,5 +1,6 @@
 import java.util.ArrayList; 
 import java.util.AbstractQueue;
+import java.util.Iterator;
 
 
 public class MyQueue<T> extends AbstractQueue<T>{
@@ -14,8 +15,36 @@ public class MyQueue<T> extends AbstractQueue<T>{
         return true;
     }
     public T poll(){
-    
+        if (list.get(0) != null){
+            T item = list.get(0);
+            list.remove(0);
+            return item;
+        }
+        else {
+            return null;
+        }
+    }
 
+    public T peek(){
+        if (list.get(0) != null){
+            T item = list.get(0);
+            return item;
+        }
+        else {
+            return null;
+        }
+    }
+
+    public boolean isEmpty(){
+        return (list.size() == 0);
+    }
+
+    public int size() {
+        return  list.size();
+    }
+
+    public Iterator<T> iterator() {
+        return list.iterator();
     }
 
 
