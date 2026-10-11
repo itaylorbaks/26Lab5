@@ -1,23 +1,44 @@
-import java.util.ArrayList; 
-import java.util.AbstractQueue;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 
+/**
+ * A simple queue implementation backed by an ArrayList.
+ *
+ * @param <T> the type of elements stored in the queue
+ */
 public class MyQueue<T> extends AbstractQueue<T>{
-    ArrayList<T> list = null;
+    ArrayList<T> queue = null;
 
-    public MyQueue(ArrayList<T> list){
-        this.list = list;
+    /**
+     * Creates a queue using the provided list as its storage.
+     *
+     * @param list the backing list for the queue
+     */
+    public MyQueue(ArrayList<T> queue){
+        this.queue = queue;
     }
 
+    /**
+     * Adds an item to the end of the queue.
+     *
+     * @param item the item to add
+     * @return true because the add always succeeds
+     */
     public boolean offer(T item){
-        list.add(item);
+        queue.add(item);
         return true;
     }
+
+    /**
+     * Removes and returns the first item in the queue.
+     *
+     * @return the first item, or null if the queue is empty
+     */
     public T poll(){
         if (list.get(0) != null){
-            T item = list.get(0);
-            list.remove(0);
+            T item = queue.get(0);
+            queue.remove(0);
             return item;
         }
         else {
@@ -25,9 +46,14 @@ public class MyQueue<T> extends AbstractQueue<T>{
         }
     }
 
+    /**
+     * Looks at the first item in the queue without removing it.
+     *
+     * @return the first item, or null if the queue is empty
+     */
     public T peek(){
-        if (list.get(0) != null){
-            T item = list.get(0);
+        if (queue.get(0) != null){
+            T item = queue.get(0);
             return item;
         }
         else {
@@ -35,16 +61,31 @@ public class MyQueue<T> extends AbstractQueue<T>{
         }
     }
 
+    /**
+     * Checks whether the queue has any items in it.
+     *
+     * @return true if the queue is empty, false otherwise
+     */
     public boolean isEmpty(){
-        return (list.size() == 0);
+        return (queue.size() == 0);
     }
 
+    /**
+     * Gets the number of items currently in the queue.
+     *
+     * @return the queue size
+     */
     public int size() {
-        return  list.size();
+        return  queue.size();
     }
 
+    /**
+     * Returns an iterator over the queue's items.
+     *
+     * @return an iterator for the queue
+     */
     public Iterator<T> iterator() {
-        return list.iterator();
+        return queue.iterator();
     }
 
 
