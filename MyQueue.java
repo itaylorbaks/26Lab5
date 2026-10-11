@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.AbstractQueue;
 import java.util.Iterator;
 
 
@@ -36,7 +37,7 @@ public class MyQueue<T> extends AbstractQueue<T>{
      * @return the first item, or null if the queue is empty
      */
     public T poll(){
-        if (list.get(0) != null){
+        if (queue.get(0) != null){
             T item = queue.get(0);
             queue.remove(0);
             return item;
