@@ -1,14 +1,13 @@
-import java.util.StackADT;
 import java.util.ArrayList;
 
 
-public class MyStack<T> extends StackADT<T>{
+public class MyStack<T> implements StackADT<T>{
     ArrayList<T> stack = null;
 
     public MyStack(ArrayList<T> list){
         this.stack = stack;
     }
-    
+
     public void push(T item){
         stack.add(stack.size(), item);
     }
