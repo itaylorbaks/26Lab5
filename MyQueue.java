@@ -10,7 +10,11 @@ public class MyQueue<T> extends AbstractQueue<T>{
     }
 
     public boolean offer(T item){
-        list.add(list.size(), item);
+        list.add(item);
+        return true;
+    }
+    public T poll(){
+    
 
     }
 
