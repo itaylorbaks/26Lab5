@@ -1,10 +1,10 @@
-import java.util.ArrayList;
 import java.util.AbstractQueue;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 
 /**
- * A simple queue implementation backed by an ArrayList.
+ * A simple queue implementation that extends ArrayList.
  *
  * @param <T> the type of elements stored in the queue
  */
@@ -27,7 +27,7 @@ public class MyQueue<T> extends AbstractQueue<T>{
      * @return true because the add always succeeds
      */
     public boolean offer(T item){
-        queue.add(item);
+        this.queue.add(item);
         return true;
     }
 
@@ -37,9 +37,9 @@ public class MyQueue<T> extends AbstractQueue<T>{
      * @return the first item, or null if the queue is empty
      */
     public T poll(){
-        if (queue.get(0) != null){
-            T item = queue.get(0);
-            queue.remove(0);
+        if (this.queue.get(0) != null){
+            T item = this.queue.get(0);
+            this.queue.remove(0);
             return item;
         }
         else {
@@ -53,8 +53,8 @@ public class MyQueue<T> extends AbstractQueue<T>{
      * @return the first item, or null if the queue is empty
      */
     public T peek(){
-        if (queue.get(0) != null){
-            T item = queue.get(0);
+        if (this.queue.get(0) != null){
+            T item = this.queue.get(0);
             return item;
         }
         else {
@@ -68,7 +68,7 @@ public class MyQueue<T> extends AbstractQueue<T>{
      * @return true if the queue is empty, false otherwise
      */
     public boolean isEmpty(){
-        return (queue.size() == 0);
+        return (this.queue.size() == 0);
     }
 
     /**
@@ -77,7 +77,7 @@ public class MyQueue<T> extends AbstractQueue<T>{
      * @return the queue size
      */
     public int size() {
-        return  queue.size();
+        return  this.queue.size();
     }
 
     /**
@@ -86,7 +86,7 @@ public class MyQueue<T> extends AbstractQueue<T>{
      * @return an iterator for the queue
      */
     public Iterator<T> iterator() {
-        return queue.iterator();
+        return this.queue.iterator();
     }
 
 
