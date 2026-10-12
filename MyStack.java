@@ -12,9 +12,9 @@ public class MyStack<T> implements StackADT<T>{
     /**
      * Creates a stack instance that uses the provided ArrayList as storage.
      *
-     * @param list the backing list used to store stack elements
+     * @param stack the list used to store stack elements
      */
-    public MyStack(ArrayList<T> list){
+    public MyStack(ArrayList<T> stack){
         this.stack = stack;
     }
 
